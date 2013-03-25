@@ -1,0 +1,3 @@
+#!/bin/sh
+export $(cat .env)
+bundle exec turn ./tests
