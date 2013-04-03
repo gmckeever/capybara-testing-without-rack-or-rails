@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'mechanize'
+gem 'capybara'
+gem 'launchy'
+gem 'turn'
