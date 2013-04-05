@@ -1,4 +1,4 @@
-= Standalone Cucumber Test Suite
+= Standalone Cucumber/RSpec/Capybara Test Suite
 
 == Introduction
 
