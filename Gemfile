@@ -1,7 +1,8 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
-gem 'cucumber'
-gem 'capybara'
 gem 'rspec'
-gem 'capybara-webkit'
+gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git'
 gem 'launchy'
+gem 'selenium-webdriver'
+
+#gem 'ruby-debug19'
