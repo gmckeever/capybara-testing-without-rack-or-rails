@@ -20,17 +20,17 @@ dependencies* (you don't need Qt, or a running X server, etc.)
 You will want to run the following commands to setup the project locally:
 
 ``` ruby
-    git clone git@github.com:gmckeever/ihf-testing.git
-    cd ihf-testing
-    bundle install
+git clone git@github.com:gmckeever/ihf-testing.git
+cd ihf-testing
+bundle install
 ```
 
 You will also need to install the gems located in the Gemfile.
 
 ``` ruby
-		gem install capybara
-		gem install poltergeist
-		gem install rspec
+gem install capybara
+gem install poltergeist
+gem install rspec
 ```
 
 To run the tests, you could run `./bin/run-tests` .
