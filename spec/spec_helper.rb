@@ -1,13 +1,14 @@
 require 'rubygems'
 require 'bundler/setup'
-#require 'ruby-debug'
 require 'rspec'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 
 Dir.glob(File.dirname(__FILE__) + '/factories/*', &method(:require))
 
 # Capybara configuration
-Capybara.default_driver = :selenium
+# Capybara.default_driver = :selenium
+Capybara.javascript_driver = :poltergeist
 Capybara.save_and_open_page_path = File.dirname(__FILE__) + '/../snapshots'
 
 # We will not run our own server; we will connect to a remote server
