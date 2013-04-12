@@ -4,7 +4,6 @@ require 'bundler/setup'
 require 'rspec'
 require 'capybara/rspec'
 
-include Capybara::DSL
 Dir.glob(File.dirname(__FILE__) + '/factories/*', &method(:require))
 
 # Capybara configuration
@@ -32,5 +31,14 @@ RSpec.configure do |config|
       save_and_open_page
       raise ex
     end
+  end
+end
+
+module IhomefinderTests
+	include Capybara::DSL
+
+	def teardown
+    Capybara.reset_sessions!    # Forget the (simulated) browser state
+    Capybara.use_default_driver # Revert Capybara.current_driver to Capybara.default_driver
   end
 end
