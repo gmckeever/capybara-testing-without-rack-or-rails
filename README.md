@@ -1,6 +1,6 @@
-# ihf-testing #
+# Remote Capybara/RSpec using PhantomJS without Rails #
 
-This is an ongoing project to perform blackbox integration testing using RSpec, [Capybara](https://github.com/jnicklas/capybara), and [Poltergeist](https://github.com/jonleighton/poltergeist)/[PhantomJS](http://www.phantomjs.org/). The tests being run in spec/requests/ require variables not presented in this repository so you will want to modify these to fit your own tests.
+This is an project to perform remote integration testing using RSpec, [Capybara](https://github.com/jnicklas/capybara), and [Poltergeist](https://github.com/jonleighton/poltergeist)/[PhantomJS](http://www.phantomjs.org/). The tests being run in spec/requests/ require variables not presented in this repository so you will want to modify these to fit your own tests.
 
 ## Prerequisites ##
 
@@ -33,10 +33,18 @@ gem install poltergeist
 gem install rspec
 ```
 
+### Running the tests ###
+
 To run the tests, you could run `./bin/run-tests` .
 
 Alternatively, you could execute rspec with `bundle exec rspec` .
 
+### Adding Tests ###
+
+You can add more tests by placing a file into the request folder with the name ending in spec. ex:`spec/requests/filename_spec.rb`.
+
 ## Notes ##
 
 This is being designed for [Jenkins CI](http://jenkins-ci.org/), as it supports the headless WebKit testing of PhantomJS. More details for this coming soon.
+
+If running locally, you may want to add [Launchy](https://github.com/copiousfreetime/launchy) to the project and create a debug method to open a browser window where the test fails.

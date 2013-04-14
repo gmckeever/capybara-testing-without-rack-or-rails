@@ -6,16 +6,14 @@ require 'capybara/poltergeist'
 
 Dir.glob(File.dirname(__FILE__) + '/factories/*', &method(:require))
 
-# Capybara configuration
-# Capybara.default_driver = :selenium
 Capybara.javascript_driver = :poltergeist
 Capybara.save_and_open_page_path = File.dirname(__FILE__) + '/../snapshots'
 
-# We will not run our own server; we will connect to a remote server
+# This will ensure we are connecting to a remote server
 Capybara.run_server = false
 
 # Set the base URL for all our tests
-Capybara.app_host = 'http://www.ihomefinder.com'
+Capybara.app_host = 'http://www.google.com'
 
 # RSpec configuration
 RSpec.configure do |config|
@@ -35,7 +33,8 @@ RSpec.configure do |config|
   end
 end
 
-module IhomefinderTests
+#This will including the Capybara DSL in the tests, and not in a global scope
+module GoogleTests
 	include Capybara::DSL
 
 	def teardown
